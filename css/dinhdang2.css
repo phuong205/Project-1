@@ -1,0 +1,228 @@
+body {
+  font-family: sans-serif;
+  background-size: cover;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.box-menu {
+  background-color: rgb(241, 8, 8);
+  text-align: center;
+}
+
+.box-menu ul {
+  display: inline-flex;
+  list-style: none;
+  color: white;
+}
+
+.box-menu ul li {
+  width: 125px;
+  margin-top: 0px;
+  padding: 15px;
+  height:auto;
+}
+
+.box-menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.active, .box-menu ul li:hover {
+  background: red;
+  border-radius: 3px;
+}
+
+.box-menu .fa {
+  margin-right: none;
+}
+
+.box-submenu {
+  display: none;
+}
+
+.box-menu ul li:hover .box-submenu {
+  display: block;
+  position: absolute;
+  background: red;
+  margin-top: 15px;
+  margin-left: -15px;
+}
+
+.box-menu ul li:hover .box-submenu ul {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
+.box-menu ul li:hover .box-submenu ul li {
+  width: 220px;
+  text-align: left;
+  border-bottom: dotted 1px #fff;
+  background: transparent;
+  border-radius: 0;
+  padding: 15px;
+  margin: 10px;
+}
+
+.box-menu ul li:hover .box-submenu ul li:last-child {
+  border-bottom: none;
+}
+
+.box-menu ul li:hover .box-submenu ul li a:hover {
+  color: rgb(62, 8, 8);
+}
+
+.box-submenu-2 {
+  display: none;
+}
+
+.submenu-hover:hover .box-submenu-2 {
+  display: block;
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 130px;
+  background: red;
+}
+.container {
+  padding: 20px;
+}
+.navbar {
+    
+  color: white; /* Màu chữ */
+  position:fixed; /* Làm cho menu cố định khi kéo xuống */
+  top: 0; /* Đặt vị trí cố định ở phía trên cùng */
+  width: 100%; /* Chiều rộng đầy đủ */
+  z-index: 1000; /* Đảm bảo menu ở trên các phần tử khác */
+/* Padding cho menu */
+}
+
+.navbar ul {
+  list-style: none; /* Bỏ dấu đầu dòng */
+  padding: 0; /* Bỏ padding */
+  margin: 0; /* Bỏ margin */
+  display: flex; /* Sử dụng flexbox để căn chỉnh */
+  justify-content: space-between  ;/* Canh giữa các mục */
+}
+
+.navbar li {
+  margin: 0 15px; /* Khoảng cách giữa các mục */
+}
+
+.navbar a {
+  color: white; /* Màu chữ cho liên kết */
+  text-decoration: none; /* Bỏ gạch chân */
+  font-weight: bold; /* Chữ đậm */
+}
+.chu5{
+  font-size: 15px;
+  color:white;
+  padding-right:50px;
+  }
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* remove the gap so it doesn't close */
+    background-color: white;
+}
+
+.zoom {
+    transition: transform 0.3s ease;
+}
+.zoom:hover {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+}
+.item-container{
+    width: 350px; /* Chiều rộng của khung chứa ảnh */
+    height: 570px; /* Chiều cao của khung chứa ảnh */
+    overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài khung */
+    border-radius: 25px;
+    border: 2px solid rgb(179, 177, 177);
+}
+
+.item-container:hover{
+    background-color: rgba(249,250,251,255);
+    transform: 0.1s;
+    cursor: pointer;
+}
+.image-container {
+    width: 350px; /* Chiều rộng của khung chứa ảnh */
+    height: 270px; /* Chiều cao của khung chứa ảnh */
+    overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài khung */
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+.khach{ 
+    font-weight: bolder;
+    font-size: 30px;
+    padding-top: 40px;
+  }
+  .sao{
+    font-size: 15px;
+  }
+  .tieudekhach{
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .ten{
+    margin-top: 20px;
+    font-size: 20px;
+  
+  }
+  .anhkhachhang{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  .grid-container4{
+    margin-top: 50px;
+    width: 75%;
+    height: 400px;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: auto auto auto;
+    
+  }
+  .ten a{
+    color: rgb(57, 57, 245);
+    font-weight: bold
+  }
+  .col-4, .col-2, .col-3 {
+    padding: 15px; /* Khoảng cách giữa các cột */
+}
+
+h4 {
+    color: royalblue; /* Màu chữ tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+}
+
+p {
+    margin: 5px 0; /* Khoảng cách giữa các đoạn văn */
+}
+
+/* Thêm màu nền và một số kiểu cho phần "Mạng xã hội" */
+.col-3:last-child {
+    background-color: #f0f8ff; /* Màu nền nhạt */
+    padding: 15px; /* Padding cho phần này */
+    border-radius: 5px; /* Bo tròn góc */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Chuyển thành cột trên màn hình nhỏ */
+    }
+}
+.row {
+  display: flex; /* Sử dụng Flexbox để dễ dàng căn giữa và sắp xếp */
+  justify-content: space-between; /* Tạo khoảng cách giữa các cột */
+}

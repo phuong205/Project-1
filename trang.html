@@ -4,170 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/dinhdang1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <style>
-    .image-container {
-        position: relative;
-        display: inline-block; /* Để có thể sử dụng position absolute cho overlay */
-        margin: 20px; /* Khoảng cách giữa các ảnh */
-    }
+<header>
+    <nav class="navbar">
+        <div class="box-menu">
+            <ul>
+                <li><a href="trangchu.html"><span class="highlight">GOALGEAR</span>.vn</a></li>
+                <li><a href="bai1.html">Giới thiệu</a></li>
+                <li><a href="#">Thông tin sản phẩm</a></li>
+                <li><a href="ttsp.html">Loại áo</a>
+                    <div class="box-submenu">   
+                        <ul>
+                            <li><a href="">Áo Đội tuyển quốc gia</a></li>
+                            <li><a href="">Áo CLB</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="magiamgia.html">Mã Giảm giá</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-    .image-container img {
-        width: 300px; /* Kích thước ảnh */
-        height: auto; /* Giữ tỷ lệ khung hình */
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.7); /* Nền mờ */
-        color: white; /* Màu chữ */
-        display: flex;
-        align-items: center; /* Căn giữa chữ theo chiều dọc */
-        justify-content: center; /* Căn giữa chữ theo chiều ngang */
-        opacity: 0; /* Bắt đầu với độ mờ */
-        transition: opacity 0.3s; /* Hiệu ứng chuyển đổi */
-    }
-
-    .image-container:hover .overlay {
-        opacity: 1; /* Hiện chữ khi hover */
-    }
-    
-        .search-container {
-            display: flex;
-            align-items: center; /* Căn giữa theo chiều dọc */
-            justify-content: center; /* Căn giữa theo chiều ngang */
-            margin-top: 50px;
-        }
-        .site-name {
-            font-size: 24px; /* Kích thước chữ */
-            margin-right: 20px; /* Khoảng cách giữa tên trang và thanh tìm kiếm */
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 300px; /* Chiều rộng của thanh tìm kiếm */
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 15px;
-            margin-left: 10px;
-            border: none;
-            background-color: blue; /* Màu nền của nút */
-            color: white; /* Màu chữ của nút */
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkblue; /* Màu khi di chuột vào nút */
-        }
-    
-</style>
-<table border="4" width="100%" align="center">
-    <caption class="chu">DANH MỤC SẢN PHẨM</caption>
-    <tr>
-        <th>
-            <div class="image-container">
-                <a href="">
-                    <img src="media/anh27.jpg" alt="Product Image 1" width="500%" height="500">
-                    <div class="overlay">Chữ hiển thị khi chạm vào ảnh</div>
-                </a>
-            </div>
-        </th>
-        <th>
-            <div class="image-container">
-                <a href="">
-                    <img src="media/anh6.jpg" alt="Product Image 2" width="500%" height="500">
-                    <div class="overlay">Chữ hiển thị khi chạm vào ảnh</div>
-                </a>
-            </div>
-        </th>
-        <th>
-            <div class="image-container">
-                <a href="">
-                    <img src="media/anh9.jpg" alt="Product Image 3" width="500%" height="500">
-                    <div class="overlay">Chữ hiển thị khi chạm vào ảnh</div>
-                </a>
-            </div>
-        </th>
-        <th>
-            <div class="image-container">
-                <a href="">
-                    <img src="media/anh26.jpg" alt="Product Image 4" width="500%" height="500">
-                    <div class="overlay">Chữ hiển thị khi chạm vào ảnh</div>
-                </a>
-            </div>
-        </th>
-    </tr>
-    <tr>
-        <th>
-            <div class="image-container">
-                <a href="">
-                    <img src="media/anh11.jpg" alt="Product Image 5" width="500%" height="500">
-                    <div class="overlay">Chữ hiển thị khi chạm vào ảnh</div>
-                </a>
-            </div>
-        </th>
-        <th>
-            <div class="image-container">
-                <a href="">
-                    <img src="media/anh12.jpg" alt="Product Image 6" width="500%" height="500">
-                    <div class="overlay">Chữ hiển thị khi chạm vào ảnh</div>
-                </a>
-            </div>
-        </th>
-        <th>
-            <div class="image-container">
-                <a href="">
-                    <img src="media/anh13.jpg" alt="Product Image 7" width="500%" height="500">
-                    <div class="overlay">Chữ hiển thị khi chạm vào ảnh</div>
-                </a>
-            </div>
-        </th>
-        <th>
-            <div class="image-container">
-                <a href="">
-                    <img src="media/anh14.jpg" alt="Product Image 8" width="500%" height="500">
-                    <div class="overlay">Chữ hiển thị khi chạm vào ảnh</div>
-                </a>
-            </div>
-        </th>
-    </tr>
-</table>
-<div class="search-container">
-    <span class="site-name">goalgear.vn</span>
-    <form action="/search" method="get">
-        <input type="text" placeholder="Nhập từ khóa..." name="q" required>
-        <button type="submit">Tìm kiếm</button>
-    </form>
-    <h2>Đánh Giá Khách Hàng</h2>
-<form action="/submit-feedback" method="POST">
-    <label for="name">Tên:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="rating">Đánh Giá:</label>
-    <select id="rating" name="rating" required>
-        <option value="1">1 sao</option>
-        <option value="2">2 sao</option>
-        <option value="3">3 sao</option>
-        <option value="4">4 sao</option>
-        <option value="5">5 sao</option>
-    </select>
-
-    <label for="comments">Bình Luận:</label>
-    <textarea id="comments" name="comments" rows="4"></textarea>
-
-    <button type="submit">Gửi Đánh Giá</button>
-</form>
-</div>
+<div class="slideshow-container">
+    <img class="slide active fade" src="media/anh17.jpg" alt="Image 1">
+    <img class="slide fade" src="media/anh18.jpg" alt="Image 2">
+    <!-- Add more images as needed -->
 </div>
 
+<main class="container">
+    <h1 class="chu">DANH MỤC SẢN PHẨM</h1>
+    <table>
+        <tr>
+            <th><img src="media/anh27.jpg" alt="Product Image 1"></th>
+            <th><img src="media/anh6.jpg" alt="Product Image 2"></th>
+            <!-- Add more product images as needed -->
+        </tr>
+    </table>
+
+    <section>
+        <h2>ĐÁNH GIÁ CỦA KHÁCH HÀNG</h2>
+        <div class="nen">
+            <div style="display: flex; justify-content: center; gap: 50px;">
+                <div style="text-align: center;">
+                    <img src="media/anh28.jpg" alt="Ảnh 1">
+                    <p>Áo đẹp xịn xò đáng để mua</p>
+                </div>
+                <!-- Add more reviews as needed -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 GOALGEAR. All rights reserved.</p>
+</footer>
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 3000);
+</script>
 </body>
 </html>

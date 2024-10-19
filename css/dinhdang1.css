@@ -25,8 +25,9 @@ body {
 
 .box-menu ul li {
     width: 125px;
-    margin: 5px;
+    margin-top: 0px;
     padding: 15px;
+    height:auto;
 }
 
 .box-menu ul li a {
@@ -198,7 +199,7 @@ h2{
 }
 .slideshow-container {
     position: relative;
-    max-width: 1000%;
+    max-width: 1500px;
     overflow: hidden;
     margin: 70px; /* Thiết lập khoảng cách giữa các hình ảnh */
     height:auto;
@@ -254,7 +255,7 @@ h2{
   }
   .highlight {
     color: rgb(8, 97, 8); /* Thay đổi màu chữ tại đây */
-    
+
 }
 a {
     text-decoration: none; /* Xóa dấu gạch chân */
@@ -343,5 +344,38 @@ p {
         flex-direction: column; /* Chuyển thành cột trên màn hình nhỏ */
     }
 }
+.chu5{
+font-size: 15px;
+color:white;
+padding-right:50px;
+}
+.navbar {
+    
+    color: white; /* Màu chữ */
+    position:fixed; /* Làm cho menu cố định khi kéo xuống */
+    top: 0; /* Đặt vị trí cố định ở phía trên cùng */
+    width: 100%; /* Chiều rộng đầy đủ */
+    z-index: 1000; /* Đảm bảo menu ở trên các phần tử khác */
+ /* Padding cho menu */
+}
+
+.navbar ul {
+    list-style: none; /* Bỏ dấu đầu dòng */
+    padding: 0; /* Bỏ padding */
+    margin: 0; /* Bỏ margin */
+    display: flex; /* Sử dụng flexbox để căn chỉnh */
+    justify-content: space-between  ;/* Canh giữa các mục */
+}
+
+.navbar li {
+    margin: 0 15px; /* Khoảng cách giữa các mục */
+}
+
+.navbar a {
+    color: white; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Bỏ gạch chân */
+    font-weight: bold; /* Chữ đậm */
+}
+
 
 
