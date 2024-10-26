@@ -1,0 +1,18 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Tạo cột tự động, mỗi cột tối thiểu 250px */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    padding: 20px; /* Khoảng cách bên trong lưới */
+}
+
+.product {
+    border: 1px solid #ccc; /* Viền cho mỗi sản phẩm */
+    border-radius: 5px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong sản phẩm */
+    text-align: center; /* Căn giữa nội dung trong sản phẩm */
+}
+
+.product img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của khối sản phẩm */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+}

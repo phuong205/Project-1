@@ -1,228 +1,166 @@
-body {
-  font-family: sans-serif;
-  background-size: cover;
-  background-color: white;
+/*sticky navbar */
+.custom-navbar {
+  background-color:red ;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+.custom-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
 }
-
-* {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+.custom-nav li {
+  position: relative;
 }
 
-.box-menu {
-  background-color: rgb(241, 8, 8);
-  text-align: center;
-}
-
-.box-menu ul {
-  display: inline-flex;
-  list-style: none;
-  color: white;
-}
-
-.box-menu ul li {
-  width: 125px;
-  margin-top: 0px;
+.custom-nav a {
+  font-weight: 600;
+  display: block;
   padding: 15px;
-  height:auto;
-}
-
-.box-menu ul li a {
-  color: white;
+  color:white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
-
-.active, .box-menu ul li:hover {
-  background: red;
-  border-radius: 3px;
+.custom-nav a:hover {
+  color: black; 
 }
-
-.box-menu .fa {
-  margin-right: none;
-}
-
-.box-submenu {
+.custom-nav li ul {
   display: none;
-}
-
-.box-menu ul li:hover .box-submenu {
-  display: block;
   position: absolute;
-  background: red;
-  margin-top: 15px;
-  margin-left: -15px;
+  top: 100%;
+  left: 0;
+  background-color: red; 
+  border: 1px solid gray; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.custom-nav li:hover ul {
+  display: block;
+}
+.custom-nav li ul li {
+  width: 200px; 
+}
+.custom-nav li ul a {
+  padding: 10px;
+  color: white;
+  transition: color 0.3s ease; 
 }
 
-.box-menu ul li:hover .box-submenu ul {
-  display: block;
-  margin: 0px;
+
+.custom-nav li ul a:hover {
+  color:black; 
+}
+
+/*zoom ảnh khi hover */
+.image-zoom {
+  overflow: hidden;
+  position: relative;
+}
+.image-zoom img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+.image-zoom:hover img {
+  transform: scale(1.1);
+}
+/* */
+/*phan menu today */
+.container {
+  max-width: 1500px;
+  margin: auto;
   padding: 0px;
 }
 
-.box-menu ul li:hover .box-submenu ul li {
-  width: 220px;
-  text-align: left;
-  border-bottom: dotted 1px #fff;
-  background: transparent;
-  border-radius: 0;
-  padding: 15px;
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.col-4 {
+  flex: 1 1 30%;
   margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
 }
 
-.box-menu ul li:hover .box-submenu ul li:last-child {
-  border-bottom: none;
+.col-4:hover {
+  transform: scale(1.05);
 }
 
-.box-menu ul li:hover .box-submenu ul li a:hover {
-  color: rgb(62, 8, 8);
+.item-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
 }
 
-.box-submenu-2 {
-  display: none;
-}
-
-.submenu-hover:hover .box-submenu-2 {
-  display: block;
-  position: absolute;
-  margin-top: -40px;
-  margin-left: 130px;
-  background: red;
-}
-.container {
-  padding: 20px;
-}
-.navbar {
-    
-  color: white; /* Màu chữ */
-  position:fixed; /* Làm cho menu cố định khi kéo xuống */
-  top: 0; /* Đặt vị trí cố định ở phía trên cùng */
-  width: 100%; /* Chiều rộng đầy đủ */
-  z-index: 1000; /* Đảm bảo menu ở trên các phần tử khác */
-/* Padding cho menu */
-}
-
-.navbar ul {
-  list-style: none; /* Bỏ dấu đầu dòng */
-  padding: 0; /* Bỏ padding */
-  margin: 0; /* Bỏ margin */
-  display: flex; /* Sử dụng flexbox để căn chỉnh */
-  justify-content: space-between  ;/* Canh giữa các mục */
-}
-
-.navbar li {
-  margin: 0 15px; /* Khoảng cách giữa các mục */
-}
-
-.navbar a {
-  color: white; /* Màu chữ cho liên kết */
-  text-decoration: none; /* Bỏ gạch chân */
-  font-weight: bold; /* Chữ đậm */
-}
-.chu5{
-  font-size: 15px;
-  color:white;
-  padding-right:50px;
-  }
-.dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0; /* remove the gap so it doesn't close */
-    background-color: white;
-}
-
-.zoom {
-    transition: transform 0.3s ease;
-}
-.zoom:hover {
-    transform: scale(1.1); /* Phóng to ảnh khi hover */
-}
-.item-container{
-    width: 350px; /* Chiều rộng của khung chứa ảnh */
-    height: 570px; /* Chiều cao của khung chứa ảnh */
-    overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài khung */
-    border-radius: 25px;
-    border: 2px solid rgb(179, 177, 177);
-}
-
-.item-container:hover{
-    background-color: rgba(249,250,251,255);
-    transform: 0.1s;
-    cursor: pointer;
-}
-.image-container {
-    width: 350px; /* Chiều rộng của khung chứa ảnh */
-    height: 270px; /* Chiều cao của khung chứa ảnh */
-    overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài khung */
-}
 .image-container img {
-    width: 100%;
-    height: auto;
-}
-.khach{ 
-    font-weight: bolder;
-    font-size: 30px;
-    padding-top: 40px;
-  }
-  .sao{
-    font-size: 15px;
-  }
-  .tieudekhach{
-    margin-top: 5px;
-    font-size: 20px;
-  }
-  .ten{
-    margin-top: 20px;
-    font-size: 20px;
-  
-  }
-  .anhkhachhang{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }
-  .grid-container4{
-    margin-top: 50px;
-    width: 75%;
-    height: 400px;
-    display: grid;
-    column-gap: 20px;
-    row-gap: 20px;
-    grid-template-columns: auto auto auto;
-    
-  }
-  .ten a{
-    color: rgb(57, 57, 245);
-    font-weight: bold
-  }
-  .col-4, .col-2, .col-3 {
-    padding: 15px; /* Khoảng cách giữa các cột */
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
 }
 
 h4 {
-    color: royalblue; /* Màu chữ tiêu đề */
-    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+  margin: 10px 0;
+  font-size: 24px;
+  color: #333;
 }
 
+.item-container div {
+  margin-top: 0px;
+}
+
+.item-container div {
+  line-height: 1.5;
+  color: rgb(96, 114, 144);
+}
+/*  */
+/*doan cuoi*/
+.col-4, .col-2, .col-3 {
+  padding: 15px; /* Khoảng cách giữa các cột */
+}
 p {
-    margin: 5px 0; /* Khoảng cách giữa các đoạn văn */
+  margin: 5px 0; /* Khoảng cách giữa các đoạn văn */
+}
+.slideshow-container {
+  position: relative;
+  max-width: 1500px;
+  overflow: hidden;
+  margin: 70px; /* Thiết lập khoảng cách giữa các hình ảnh */
+  height:auto;
+  
+}
+/* */
+.chu{
+  font-size: 30px;
+  color:brown;
+  font-weight: bold;
+}
+h1, h2 {
+  color: #2c3e50;
+}
+.chu2 {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.chu1 {
+  background-color: #eaf7e5;
+  border-left: 5px solid #27ae60;
+  padding-left: 10px;
 }
 
-/* Thêm màu nền và một số kiểu cho phần "Mạng xã hội" */
-.col-3:last-child {
-    background-color: #f0f8ff; /* Màu nền nhạt */
-    padding: 15px; /* Padding cho phần này */
-    border-radius: 5px; /* Bo tròn góc */
-}
 
-/* Responsive */
-@media (max-width: 768px) {
-    .row {
-        flex-direction: column; /* Chuyển thành cột trên màn hình nhỏ */
-    }
-}
-.row {
-  display: flex; /* Sử dụng Flexbox để dễ dàng căn giữa và sắp xếp */
-  justify-content: space-between; /* Tạo khoảng cách giữa các cột */
-}

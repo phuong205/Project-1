@@ -1,0 +1,146 @@
+/*sticky navbar */
+.custom-navbar {
+  background-color:red ;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+.custom-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.custom-nav li {
+  position: relative;
+}
+
+.custom-nav a {
+  font-weight: 600;
+  display: block;
+  padding: 15px;
+  color:white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.custom-nav a:hover {
+  color: black; 
+}
+.custom-nav li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: red; 
+  border: 1px solid gray; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.custom-nav li:hover ul {
+  display: block;
+}
+.custom-nav li ul li {
+  width: 200px; 
+}
+.custom-nav li ul a {
+  padding: 10px;
+  color: white;
+  transition: color 0.3s ease; 
+}
+
+
+.custom-nav li ul a:hover {
+  color:black; 
+}
+
+/*zoom ảnh khi hover */
+.image-zoom {
+  overflow: hidden;
+  position: relative;
+}
+.image-zoom img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+.image-zoom:hover img {
+  transform: scale(1.1);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Tạo cột tự động, mỗi cột tối thiểu 250px */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    padding: 20px; /* Khoảng cách bên trong lưới */
+}
+
+.product {
+    border: 1px solid #ccc; /* Viền cho mỗi sản phẩm */
+    border-radius: 5px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong sản phẩm */
+    text-align: center; /* Căn giữa nội dung trong sản phẩm */
+}
+
+.product img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của khối sản phẩm */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+}
+.slideshow-container {
+    position: relative;
+    max-width: 1500px;
+    overflow: hidden;
+    margin: 70px; /* Thiết lập khoảng cách giữa các hình ảnh */
+    height:auto;
+    
+  }
+.container {
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: auto;      /* Căn giữa */
+    padding: 20px;     /* Khoảng cách bên trong */
+    border-top: 2px solid gray; /* Viền trên */
+}
+
+.row {
+    display: flex;     /* Sử dụng Flexbox để bố trí các cột */
+    flex-wrap: wrap;  /* Cho phép các cột xuống dòng khi không đủ chỗ */
+    margin-top: 20px; /* Khoảng cách giữa các hàng */
+}
+
+.col-2, .col-3 {
+    padding: 10px;    /* Khoảng cách bên trong các cột */
+}
+
+.col-2 {
+    flex: 0 0 20%;    /* Chiều rộng 20% cho các cột col-2 */
+}
+
+.col-3 {
+    flex: 0 0 30%;    /* Chiều rộng 30% cho các cột col-3 */
+}
+
+h4 {
+    color: royalblue;  /* Màu tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+}
+
+p {
+    margin: 5px 0;    /* Khoảng cách giữa các đoạn văn */
+}
+
+a {
+    text-decoration: none; /* Bỏ gạch chân cho liên kết */
+    color: royalblue;     /* Màu sắc liên kết */
+    margin-right: 10px;   /* Khoảng cách giữa các liên kết */
+}
+
+a:hover {
+    color: darkblue;     /* Đổi màu khi di chuột qua liên kết */
+}
+
+svg {
+    vertical-align: middle; /* Căn giữa biểu tượng SVG */
+}
+
