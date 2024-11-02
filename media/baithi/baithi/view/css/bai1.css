@@ -1,0 +1,41 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+form {
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+label {
+    width: 150px; /* Chiều rộng nhãn */
+    margin-right: 10px; /* Khoảng cách giữa nhãn và ô nhập */
+    color: red;
+}
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="date"],
+select {
+    flex: 1; /* Ô nhập sẽ chiếm toàn bộ không gian còn lại */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+input[type="submit"]:hover {
+    background-color: #454945;
+}
