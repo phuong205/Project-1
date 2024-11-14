@@ -10,63 +10,276 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+       
         .header {
             background-color:rgb(242, 242, 227);
             color: rgb(233, 86, 110);
             padding: 20px;
             text-align: center;}
-            
-        
-    </style>
-       
+            h2 {
+      color: #ff6600;
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
 
+    /* Định dạng đoạn văn */
+    
+    .brand-info {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      margin: 40px 0;
+      text-align: center;
+      border-radius: 8px;
+    }
+    
+    .brand-info h3 {
+      margin: 0;
+      font-size: 22px;
+    }
+    
+    /* Thêm một chút trang trí */
+    .highlight {
+      font-weight: bold;
+      color: #ff6600;
+    }
+    .container {
+            display: flex;
+            overflow-x: auto; /* Enables horizontal scrolling */
+            gap: 20px; /* Adds space between cards */
+            padding: 20px;
+        }
+
+        .card {
+            width: 250px;
+            height: 450px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0; /* Prevents the card from shrinking */
+        }
+
+        .item-box {
+            position: relative;
+            width: 100%;
+            height: 250px;
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: 0.5s ease;
+            background-color: rgba(0, 140, 186, 0.7); /* Slight transparency */
+        }
+
+        .item-box:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 10px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .nut {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .nut:hover {
+            background-color: #005f73;}
+            .footer {
+        background-color: #f8f9fa;
+        color: #333;
+        border-top: 2px solid #ddd;
+        padding: 40px 0;
+    }
+
+    .footer-title {
+        color: royalblue;
+        font-size: 1.4rem;
+        margin-bottom: 20px; /* More space below the title */
+        font-weight: bold;
+    }
+
+    .footer-info {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 15px; /* More space between info lines */
+    }
+
+    .footer-links {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer-link {
+        font-size: 1rem;
+        color: #007bff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 15px; /* More space between each link */
+        transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+        color: red;
+        text-decoration: underline;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 25px; /* More space between social icons */
+        margin-top: 20px;
+    }
+    .footer {
+            background-color: white;
+            
+         
+            padding: 40px 0;
+            margin-left: 200px;
+        }
+
+    .social-icon {
+        font-size: 30px;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+
+    .social-icon:hover {
+        color: royalblue;
+    }
+
+    .footer-bottom {
+        font-size: 1rem;
+        color: #777;
+        margin-top: 30px; /* More space from content */
+    }
+    
+/* Bỏ đường viền trên và dưới */
+/* Bỏ đường viền trên */
+.element {
+    border-top: none;
+}
+
+
+
+    /* Mobile Responsive */
+    @media (max-width: 767px) {
+        .footer-title {
+            font-size: 1.2rem;
+        }
+        .footer-info {
+            font-size: 0.9rem;
+        }
+        .footer-link {
+            font-size: 0.9rem;
+        }
+        .social-icons {
+            gap: 15px;
+        }
+    }
+            
+    </style>
     
 </head>
 <body>
     <nav class="custom-navbar">
         <ul class="custom-nav">
-            <li style="margin-left: 150px; font-size: 25px;"><a href="#">GOALGEAR.vn</a></li>
-            <li style="margin-left: 80px;"><a href="trangchu.html">GIỚI THIỆU</a></li>
+            <li style="margin-left: 150px; font-size: 25px;"><a href="trangchu.html">GOALGEAR.vn</a></li>
+            <li style="margin-left: 80px;"><a href="gioithieu.html">GIỚI THIỆU</a></li>
             <li style="margin-left: 80px;" ><a href="loaiao.html">LOẠI ÁO</a>
                 <ul class="custom-dropdown">
-                    <li><a href="#">ÁO ĐỘI TUYỂN QUỐC GIA</a></li>
-                    <li><a href="#">ÁO CLB</a></li>
-                    <li><a href="#">ÁO KHÔNG LOGO</a></li>
-                    <li><a href="#">ÁO BÓNG ĐÁ THIẾT KẾ</a></li>
+                    <li><a href="loaiao.html">ÁO ĐỘI TUYỂN QUỐC GIA</a></li>
+                    <li><a href="loaiao1.html">ÁO CLB</a></li>
+                    <li><a href="loaiao2.html">SẢN PHẨM KHÁC </a></li>
+                    
                     
                 </ul>
             </li>
             
-            <li style="margin-left: 80px;"><a href="#">MÃ GIẢM GIÁ</a></li>
-            <li style="margin-left: 80px;"><a href="#">LIÊN HỆ</a></li>
-            <li style="margin-left: 80px;font-size: 22px;"><a href="#"><i class="bi bi-person-circle"></i></a></li>
-            <li style="margin-left: 80px;font-size: 22px;"><a href="#"><i class="bi bi-cart4"></i></a></li>
+            <li style="margin-left: 80px;"><a href="magiamgia.html">MÃ GIẢM GIÁ</a></li>
+            <li style="margin-left: 80px;"><a href="lienhe.html">LIÊN HỆ</a></li>
+            <li style="margin-left: 80px;font-size: 22px;"><a href="dangnhap.html"><i class="bi bi-person-circle"></i></a></li>
+            <li style="margin-left: 80px;font-size: 22px;"><a href="them.html"><i class="bi bi-cart4"></i></a></li>
 
             
         </ul>
     </nav>
     </header>
+
     <div class="header">
         <h1>ÁO BÓNG ĐÁ ĐẸP</h1>
         <p>Khám phá những mẫu áo bóng đá mới nhất!</p>
     
     <div class="btn-group">
         <a href="trangchu.html"  class="btn btn-primary">TRANG CHỦ</a>
-        <a href="trangchu.html"  class="btn btn-primary">LOẠI ÁO</a>
-        <a href="trangchu.html" class="btn btn-primary">ÁO CLB</a>
+        <a href="loaiao.html"  class="btn btn-primary">LOẠI ÁO</a>
+        <a href="loaiao.html" class="btn btn-primary">ÁO ĐỘI TUYỂN QUỐC GIA</a>
         
       </div>
     </div>
-    
-      
+
+
+    <h1>Trang Phục Bóng Đá GOALDEAR</h1>
+
+    <p class="p1">Thời Trang Cùng Những Đội Bóng Nổi Tiếng</p>
+  
+    <p class="p1">Các fan hâm mộ của các câu lạc bộ chắc hẳn sẽ không bao giờ bỏ qua các trang phục của những đội bóng nổi tiếng như <span class="highlight">Real Marid</span>, <span class="highlight">Juventus</span>…. Nếu bạn đã đam mê với bóng đá và thích trang phục của những đội bóng này, hãy tham khảo các mẫu quần áo do <span class="highlight">GOARGEAR</span> may mặc.</p>
+  
+    <p class="p1">Áo câu lạc bộ có rất nhiều thiết kế đẹp và đa dạng, có thể đáp ứng được nhu cầu sử dụng của nhiều đối tượng khách hàng. Các thiết kế áo bóng đá dài tay, ngắn tay, cổ tim, cổ tròn… luôn được đánh giá cao. Khách hàng có thể lựa chọn để GOARGEAR sản xuất theo yêu cầu.</p>
+  
+    <p class="p1">Những thiết kế áo câu lạc bộ thường sở hữu màu sắc ấn tượng cùng kiểu dáng hiện đại và chất liệu mát mẻ, thấm hút mồ hôi tốt. Các mẫu áo này sẽ làm hài lòng người dùng và hiện được cung cấp độc quyền trên thị trường bởi GOARGEAR với mức giá phải chăng.</p>
+  
+    <div class="brand-info">
+      <h3>Khám Phá Những Mẫu Áo Bóng Đá Chất Lượng Tại GOARGEAR</h3>
+      <p class="p1">Chất lượng tuyệt vời, thiết kế thời thượng, giá cả hợp lý.</p>
+    </div>
     <div class="slideshow-container" style="background-color: aliceblue;">
         <div class="product-grid">
             <div class="product">
                 <img src="media/anh82.jpg" height="100px">
                 <h2 style="font-size: 20px;font-weight: 500">TOTTENHAM</h2>
                 <p>Giá: 200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
         
                 
@@ -74,215 +287,348 @@
                 <img src="media/anh83.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px; font-weight: 500;">REAL MARID</h2>
                 <p>GIÁ:170.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh84.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px; font-weight: 500">REAL MARID</h2>
                 <p>GIÁ:180.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh85.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">PSG</h2>
                 <p>GIÁ:160.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh86.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">PSG</h2>
                 <p>GIÁ:190.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
     
             <div class="product">
                 <img src="media/anh87.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px; font-weight: 500">MAN UNTIED</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh88.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">MAN UNTIED</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh89.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">MAN CITY</h2>
                 <p>GIÁ:180.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh90.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">LIVERPOOL</h2>
                 <p>GIÁ:145.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>>
+                
             </div>
             <div class="product">
                 <img src="media/anh91.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px; font-weight: 500">LIVERPOOL</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh92.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">JUVENTUS</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh93.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">INTER MILAN</h2>
                 <p>GIÁ:180.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh94.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">INTER MILAN</h2>
                 <p>GIÁ:145.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh95.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px; font-weight: 500">CHELSEA</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh96.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">CHELSEA</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh97.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">BARC</h2>
                 <p>GIÁ:180.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh98.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">ALETICO</h2>
                 <p>GIÁ:145.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</i></button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh99.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px; font-weight: 500">ARENAL</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh100.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">AC MILAN</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh101.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">AC MILAN</h2>
                 <p>GIÁ:180.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh102.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">LIVERPOOL</h2>
                 <p>GIÁ:145.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh103.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px; font-weight: 500">ARSENAL</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh104.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">BAYERN MUNICH</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh105.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">BAYERN MUNICH</h2>
                 <p>GIÁ:180.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh106.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">BAYERN MUNICH</h2>
                 <p>GIÁ:145.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh107.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px; font-weight: 500">PSG</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh108.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">TOTTENHAM</h2>
                 <p>GIÁ:200.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh109.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">JUVENTUS</h2>
                 <p>GIÁ:180.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh110.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500">ASROMAN</h2>
                 <p>GIÁ:145.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <div class="product">
                 <img src="media/anh111.jpg" alt="Sản phẩm 2">
                 <h2 style="font-size: 20px;font-weight: 500" >AN MILAN HOME </h2>
                 
                 <p>155.000</p>
-                <button type="button" class="btn btn-outline-success">BUY NOW</button>
-                <button type="button" class="btn btn-outline-success">+</button>
+                <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
             </div>
             <!-- Thêm nhiều sản phẩm khác -->
         </div>
     </div>
+    <p style="font-size: 30px; color: brown; font-weight: bold;">SẢN PHẨM KHÁC CỦA GOARGEAR</p>
+
+<div class="container">
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="item-box">
+            <img src="Media/anh149.jpg" alt="Avatar" class="image">
+            <div class="overlay">
+                <img src="Media/anh150.jpg" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">BÌNH XỊT LẠNH VÀ NÓNG</h5>
+            <p class="card-text">1.300.000Đ</p>
+            <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+            <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <div class="item-box">
+            <img src="Media/anh153.jpeg" alt="Avatar" class="image">
+            <div class="overlay">
+                <img src="Media/anh154.jpeg" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">GIÀY THỂ THAO</h5>
+            <p class="card-text">1.300.000Đ</p>
+            <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+            <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <div class="item-box">
+            <img src="Media/anh157.jpeg" alt="Avatar" class="image">
+            <div class="overlay">
+                <img src="Media/anh158.jpeg" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">GIÀY THƯƠNG HIỆU Adidas</h5>
+            <p class="card-text">1.300.000Đ</p>
+            <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        <div class="item-box">
+            <img src="Media/anh147.jpg" alt="Avatar" class="image">
+            <div class="overlay">
+                <img src="Media/anh148.jpg" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">BỌC ỐNG ĐỒNG</h5>
+            <p class="card-text">1.300.000Đ</p>
+            <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+            <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+        <div class="item-box">
+            <img src="Media/anh145.jpeg" alt="Avatar" class="image">
+            <div class="overlay">
+                <img src="Media/anh146.jpeg" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">BÓ GÓT VÀ BÓ GỐI</h5>
+            <p class="card-text">1.300.000Đ</p>
+            <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-box">
+            <img src="Media/anh10.jpg" alt="Avatar" class="image">
+            <div class="overlay">
+                <img src="Media/anh66.jpg" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">THỔ NHĨ KÌ</h5>
+            <p class="card-text">1.300.000Đ</p>
+            <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+            <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-box">
+            <img src="Media/anh24.jpg" alt="Avatar" class="image">
+            <div class="overlay">
+                <img src="Media/anh65.jpg" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">VIỆT NAM</h5>
+            <p class="card-text">1.300.000Đ</p>
+            <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+            <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="item-box">
+            <img src="Media/anh25.jpg" alt="Avatar" class="image">
+            <div class="overlay">
+                <img src="Media/anh62.jpg" alt="Avatar" class="image">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">BỒ ĐÀO NHA</h5>
+            <p class="card-text">1.300.000Đ</p>
+            <a href="mua.html"><button type="button" class="btn btn-outline-success">BUY NOW</button></a>
+                <a href="them.html"><button type="button" class="btn btn-outline-success">+</button></a>
+        </div>
+    </div>
+   
+</div>
+        <h1>CHỌN SIZE</h1>
+        <img src="media/anh112.jpg">
+    </div>
+    
+        <!-- Card 4 -->
+        
     <h1>QUÀ TẶNG &KHUYẾN MÃI</h1>
     
     
-    <div class="chu1">
-        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+    
+        <table style="width: 100%; border-collapse: collapse; text-align: left;background-color: #eaf7e5;">
             <thead>
                 <tr>
                     <th style="border: 1px solid #ddd; padding: 8px; color:red;">STT</th>
@@ -315,10 +661,10 @@
         </table>
     </div>
     
-    <h2>SẢN PHẨM MỚI</h2>
+    <h1>SẢN PHẨM MỚI</h1>
     
     
-    <table style="width: 50%; height:50%; border-collapse: collapse; text-align: left;background-color: #eaf7e5;>
+    <table style="width: 50%; height:50%; border-collapse: collapse; text-align: left;background-color: #eaf7e5;">
         <thead>
             <tr>
                 <th style="border: 1px solid #ddd; padding: 8px; color:red;">STT</th>
@@ -354,45 +700,66 @@
         </tbody>
     </table>
     </div>
-    <div class="container mt-5" style="border-top: 2px solid gray ">
-        <div class="row mt-4">
-            <div class="col-2">
-                <h4 style="color:royalblue;">Shop GOALGEAR</h4>
-                <p>Địa chỉ:Hai Bà Trưng Hà Nội</p>
-                <p>Hotline: 0926177889</p>
-                <p>Email:goalgear@gmail.com</p>
-                <p>Thời gian: 08:00 - 22:30</p>
+   
+      <!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container mt-5 pt-5 pb-5">
+        <div class="row">
+            <!-- Shop GOALGEAR Information -->
+            <div class="col-12 col-md-4 mb-5">
+                <h4 class="footer-title">Shop GOALGEAR</h4>
+                <p class="footer-info">Địa chỉ: Hai Bà Trưng, Hà Nội</p>
+                <p class="footer-info">Hotline: 0926177889</p>
+                <p class="footer-info">Email: goalgear@gmail.com</p>
+                <p class="footer-info">Thời gian: 08:00 - 22:30</p>
             </div>
-            <div class="col-2">
-             <h4 style="color:royalblue;">Thông Tin</h4>
-             <p>Giới Thiệu</p>
-             <p>Tin Tức</p>
-             <p>Sản Phẩm</p>
-             <p>Dịch Vụ</p>
-             <p>Liên Hệ</p>
+
+            <!-- Information Links -->
+            <div class="col-6 col-md-2 mb-5">
+                <h4 class="footer-title">Thông Tin</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Giới Thiệu</a></li>
+                    <li><a href="#" class="footer-link">Tin Tức</a></li>
+                    <li><a href="#" class="footer-link">Sản Phẩm</a></li>
+                    <li><a href="#" class="footer-link">Dịch Vụ</a></li>
+                    <li><a href="#" class="footer-link">Liên Hệ</a></li>
+                </ul>
             </div>
-            <div class="col-3">
-            <h4 style="color:royalblue;">Dịch Vụ Khách Hàng</h4>
-             <p>Chính sách thanh toán</p>
-             <p>Chính sách vận chuyển</p>
-             <p>Chính sách bảo hành</p>
-             <p>Chính sách đổi trả</p>
-             <p>Chính sách bảo vệ thông tin</p>
+
+            <!-- Customer Service Links -->
+            <div class="col-6 col-md-3 mb-5">
+                <h4 class="footer-title">Dịch Vụ Khách Hàng</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Chính sách thanh toán</a></li>
+                    <li><a href="#" class="footer-link">Chính sách vận chuyển</a></li>
+                    <li><a href="#" class="footer-link">Chính sách bảo hành</a></li>
+                    <li><a href="#" class="footer-link">Chính sách đổi trả</a></li>
+                    <li><a href="#" class="footer-link">Chính sách bảo vệ thông tin</a></li>
+                </ul>
             </div>
-            <div class="col-3">
-            <h4 style="color:royalblue;">Theo dõi chúng tôi trên:</h4>
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                </svg></a> |
-                  <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
-                  </svg></a> | 
-                  <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                  </svg></a> | 
-                  <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
-                  </svg></a>
+
+            <!-- Social Media Section -->
+            <div class="col-12 col-md-3 mb-5 text-center text-md-start">
+                <h4 class="footer-title">Theo dõi chúng tôi trên:</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center pt-5">
+        <p class="footer-bottom">© 2024 GOALGEAR. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Add Bootstrap Icons (optional) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Add Custom CSS for Styling -->
+
+
 </body>
 </html>
